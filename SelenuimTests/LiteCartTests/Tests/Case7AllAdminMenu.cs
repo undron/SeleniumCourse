@@ -13,6 +13,7 @@ namespace LiteCartTests.Tests
         [SetUp]
         public void LoginToAdminZone()
         {
+            driver.Navigate().GoToUrl(siteUrl);
             driver.FindElement(By.Name("username")).SendKeys(login);
             driver.FindElement(By.Name("password")).SendKeys(password);
             driver.FindElement(By.Name("login")).Click();

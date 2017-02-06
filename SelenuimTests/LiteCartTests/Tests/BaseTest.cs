@@ -13,7 +13,8 @@ namespace LiteCartTests.Tests
     {
         protected IWebDriver driver;
 
-        protected string siteUrl = "http://localhost/litecart/admin/";
+        protected string siteUrl = "http://localhost/litecart/";
+        protected string siteAdminUrl = "http://localhost/litecart/admin/";
         protected string login = "admin";
         protected string password = "admin";
 
@@ -23,7 +24,6 @@ namespace LiteCartTests.Tests
             driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(siteUrl);
         }
 
         [TearDown]
