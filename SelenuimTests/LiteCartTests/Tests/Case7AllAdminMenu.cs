@@ -27,12 +27,12 @@ namespace LiteCartTests.Tests
                 var menuItem = driver.FindElement(By.CssSelector($"#box-apps-menu > li:nth-of-type({i})"));
                 menuItem.Click();
 
-                int subMenuItemsCount = driver.FindElements(By.CssSelector("#box-apps-menu > li.selected ul > li")).Count();
+                int subMenuItemsCount = driver.FindElements(By.CssSelector("#box-apps-menu > li.selected li")).Count();
                 Assert.That(IsHeaderPresent(driver), Is.True, "Header not found!");
 
                 for (int j = 1; j <= subMenuItemsCount; j++)
                 {
-                    var subMenuItem = driver.FindElement(By.CssSelector($"#box-apps-menu > li.selected ul > li:nth-of-type({j})"));
+                    var subMenuItem = driver.FindElement(By.CssSelector($"#box-apps-menu > li.selected li:nth-of-type({j})"));
                     subMenuItem.Click();
                     Assert.That(IsHeaderPresent(driver), Is.True, "Header not found!");
                 }
