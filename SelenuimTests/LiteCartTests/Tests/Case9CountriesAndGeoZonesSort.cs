@@ -37,13 +37,14 @@ namespace LiteCartTests.Tests
             TestContext.WriteLine("Countries found:\n" + String.Join("\n", countries));
             Assert.That(countries, Is.Ordered);
 
-            var countriesWithZonesXPath = "//*[@class='dataTable']//tr[@class='row']/td[6][not(contains(.,'0'))]/../td[5]/a";
-            var countriesWithZonesCount = driver.FindElements(By.XPath(countriesWithZonesXPath)).Count;
+            var countriesWithZonesLocator = 
+                By.XPath("//*[@class='dataTable']//tr[@class='row']/td[6][not(contains(.,'0'))]/../td[5]/a");
+            var countriesWithZonesCount = driver.FindElements(countriesWithZonesLocator).Count;
 
             for (int i = 0; i < countriesWithZonesCount; i++)
             {
                 driver.Navigate().GoToUrl(countriesPageUrl);
-                driver.FindElements(By.XPath(countriesWithZonesXPath))[i].Click();
+                driver.FindElements(countriesWithZonesLocator)[i].Click();
 
                 var zones = driver.FindElements(By.CssSelector("#table-zones td:nth-of-type(3)>input[type='hidden']"))
                     .Select(element => element.GetAttribute("value"));
@@ -55,7 +56,23 @@ namespace LiteCartTests.Tests
         [Test]
         public void GeoZonesSortTest()
         {
+            string geoZonesPageUrl = Scenarios.siteAdminUrl + "?app=geo_zones&doc=geo_zones";
 
+            driver.Navigate().GoToUrl(geoZonesPageUrl);
+
+            var countriesWithZonesLocator = By.CssSelector(".dataTable .row>td:nth-of-type(3) a");
+            var countriesWithZonesCount = driver.FindElements(countriesWithZonesLocator).Count;
+
+            for (int i = 0; i < countriesWithZonesCount; i++)
+            {
+                driver.Navigate().GoToUrl(geoZonesPageUrl);
+                driver.FindElements(countriesWithZonesLocator)[i].Click();
+
+                var zones = driver.FindElements(By.CssSelector("#table-zones td:nth-of-type(3)>select>[selected]"))
+                    .Select(element => element.Text);
+                TestContext.WriteLine("\n\nZones found:\n" + String.Join("\n", zones));
+                Assert.That(zones, Is.Ordered);
+            }
         }
 
         [OneTimeTearDown]
