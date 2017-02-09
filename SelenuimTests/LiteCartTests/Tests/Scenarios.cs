@@ -9,8 +9,8 @@ namespace LiteCartTests.Tests
 {
     public class Scenarios
     {
-        public static string siteUrl = "http://localhost:8081/litecart/";
-        public static string siteAdminUrl = "http://localhost:8081/litecart/admin/";
+        public static string siteUrl = "http://localhost/litecart/";
+        public static string siteAdminUrl = "http://localhost/litecart/admin/";
         public static string login = "admin";
         public static string password = "admin";
 
