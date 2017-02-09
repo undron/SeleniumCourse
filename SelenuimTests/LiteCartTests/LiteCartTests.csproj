@@ -64,6 +64,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Tests\BaseTest.cs" />
+    <Compile Include="Tests\Case10CorrectProductPage.cs" />
     <Compile Include="Tests\Case7AllAdminMenu.cs" />
     <Compile Include="Tests\Case8CheckStickersCount.cs" />
     <Compile Include="Tests\Case9CountriesAndGeoZonesSort.cs" />
