@@ -13,7 +13,7 @@ namespace LiteCartTests.Tests
         [SetUp]
         public void OpenProductsPage()
         {
-            driver.Navigate().GoToUrl(siteUrl);
+            driver.Navigate().GoToUrl(Scenarios.siteUrl);
         }
 
         [Test]

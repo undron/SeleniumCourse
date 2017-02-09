@@ -13,11 +13,6 @@ namespace LiteCartTests.Tests
     {
         protected IWebDriver driver;
 
-        protected string siteUrl = "http://localhost/litecart/";
-        protected string siteAdminUrl = "http://localhost/litecart/admin/";
-        protected string login = "admin";
-        protected string password = "admin";
-
         [SetUp]
         public void BeforeTest()
         {
