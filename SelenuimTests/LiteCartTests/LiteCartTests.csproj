@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="Tests\Case10CorrectProductPage.cs" />
+    <Compile Include="Tests\Case11Register.cs" />
+    <Compile Include="Tests\Case12AddProduct.cs" />
     <Compile Include="Tests\Case7AllAdminMenu.cs" />
     <Compile Include="Tests\Case8CheckStickersCount.cs" />
     <Compile Include="Tests\Case9CountriesAndGeoZonesSort.cs" />
@@ -75,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\RubberDuck.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
