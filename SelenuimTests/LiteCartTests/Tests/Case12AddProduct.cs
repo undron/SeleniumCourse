@@ -36,6 +36,7 @@ namespace LiteCartTests.Tests
             new WebDriverWait(driver, TimeSpan.FromSeconds(3))
                 .Until(dr => dr.FindElements(By.CssSelector("[name='default_category_id'] > option")).Count == 2);
             new SelectElement(driver.FindElement(By.Name("default_category_id"))).SelectByText(productCategory);
+            driver.FindElement(By.CssSelector("[name='product_groups[]'][value='1-3']")).Click(); //Unisex
             driver.FindElement(By.Name("quantity")).Clear();
             driver.FindElement(By.Name("quantity")).SendKeys("10");
             driver.FindElement(By.Name("new_images[]")).SendKeys(ImagePath("RubberDuck.jpg"));
