@@ -24,8 +24,11 @@ namespace LiteCartTests.Tests
             string productName = "Test Duck " + DateTime.Now.Ticks.ToString();
             string productCategory = "Rubber Ducks";
             double productPrice = 7.99;
+            int productsCount;
 
             driver.FindElement(By.CssSelector("[href$='?app=catalog&doc=catalog']")).Click();
+            productsCount = driver.FindElements(By.CssSelector(".dataTable .row")).Count();
+
             driver.FindElement(By.CssSelector("a[href$='edit_product']")).Click();
 
             //General tab
@@ -69,9 +72,13 @@ namespace LiteCartTests.Tests
             //Save
             driver.FindElement(By.Name("save")).Click();
 
-            //Check product in admin catalog: check that last line contains product name
-            var createdProductName = driver.FindElements(By.CssSelector(".dataTable .row > td:nth-of-type(3)")).Last().Text;
-            Assert.That(createdProductName, Is.EqualTo(productName));
+            //Check product in admin catalog: product count increased, added product in the list
+            int productsCountAfterAddedNew = driver.FindElements(By.CssSelector(".dataTable .row")).Count();
+            int productNameCount = driver.FindElements(By.XPath($"//tr[@class='row' and contains(., '{productName}')]")).Count();
+
+            Assert.That(productsCountAfterAddedNew, Is.EqualTo(productsCount + 1));
+            Assert.That(productNameCount, Is.GreaterThan(0));
+
         }
 
         private string ImagePath(string image)
