@@ -67,6 +67,7 @@
     <Compile Include="Tests\Case10CorrectProductPage.cs" />
     <Compile Include="Tests\Case11Register.cs" />
     <Compile Include="Tests\Case12AddProduct.cs" />
+    <Compile Include="Tests\Case13Cart.cs" />
     <Compile Include="Tests\Case7AllAdminMenu.cs" />
     <Compile Include="Tests\Case8CheckStickersCount.cs" />
     <Compile Include="Tests\Case9CountriesAndGeoZonesSort.cs" />

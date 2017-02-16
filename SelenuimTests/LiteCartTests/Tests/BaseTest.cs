@@ -17,7 +17,7 @@ namespace LiteCartTests.Tests
         public void BeforeTest()
         {
             driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(1));
             driver.Manage().Window.Maximize();
         }
 
