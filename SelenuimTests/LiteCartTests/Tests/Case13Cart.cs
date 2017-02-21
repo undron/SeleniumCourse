@@ -11,7 +11,6 @@ namespace LiteCartTests.Tests
 {
     public class Case13Cart : BaseTest
     {
-        [Repeat(10)]
         [Test]
         public void CartTest()
         {
