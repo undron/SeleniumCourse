@@ -30,7 +30,6 @@ namespace LiteCartTests.Tests
                 Assert.That(logs, Is.Empty);
                 driver.Navigate().Back();
             }
-
         }
     }
 }

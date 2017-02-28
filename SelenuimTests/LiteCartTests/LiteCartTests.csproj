@@ -72,6 +72,7 @@
     <Compile Include="Tests\Case15Grid.cs" />
     <Compile Include="Tests\Case16Browserstack.cs" />
     <Compile Include="Tests\Case17BrowerLog.cs" />
+    <Compile Include="Tests\Case18Proxy.cs" />
     <Compile Include="Tests\Case7AllAdminMenu.cs" />
     <Compile Include="Tests\Case8CheckStickersCount.cs" />
     <Compile Include="Tests\Case9CountriesAndGeoZonesSort.cs" />
